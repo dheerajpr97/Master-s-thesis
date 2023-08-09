@@ -1,5 +1,4 @@
 # Master thesis - Deep Learning-based Scale Estimation of Local Image Features
-#                                                         - Dheeraj Poolavaram
 
 ## Implementation
 
