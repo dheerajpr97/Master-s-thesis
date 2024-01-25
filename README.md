@@ -1,5 +1,35 @@
 # Master thesis - Deep Learning-based Scale Estimation of Local Image Features
 
+## Overview
+
+This repository contains the implementation of a Deep Learning-based approach for scale estimation of local image features, developed using Python. It includes scripts for dataset generation, custom data generators, a modified ResNet34 architecture, training configurations, and evaluation notebooks.
+
+## Prerequisites
+Before starting, ensure the following libraries are installed:
+
+OpenCV: Required for the SIFT, SURF algorithm. Note that older versions of OpenCV are needed for compatibility.
+NumPy
+Pandas
+Tensorflow
+Scikit-learn
+
+
+## Repository Structure
+### Notebooks
+
+dataset-generation.ipynb: Located in notebooks/, this notebook generates training and test datasets using SIFT and SURF algorithms, outputting them in .JSON format.
+### Scripts
+
+data.py: Found in scripts/, this script includes a custom data generator for preprocessing and batching data for training.
+model.py: This script, located in scripts/, contains the implementation of the modified ResNet34 architecture, named Mod-ResNet34.
+train.py: Also in scripts/, this script is used for training configurations. It allows modifications to the loss function, optimizer, metrics, and hyperparameters.
+
+### Evaluation
+evaluation.ipynb: Available in notebooks/, this notebook includes the evaluation process and necessary code.
+
+### Saved Models
+Two trained models, each for SIFT and SURF algorithms using the Mod-ResNet34 architecture, are stored in saved-model/.
+
 ## Implementation
 
 ### Install the following libraries:
@@ -12,19 +42,16 @@ This work is developed in **Python**, and the following libraries need to be ins
 - Tensorflow
 - Scikit-learn
 
-Further, dataset generation and evaluation were carried out with a Jupyter Notebook.
-
-### Code
-
-The dataset generation is provided in `dataset-generation.ipynb` in the directory `notebooks/`. This notebook creates the training and test datasets using SIFT and SURF algorithms in .JSON format. The custom data generator used in this thesis is available in `data.py` in the directory `scripts/`. This custom data generator outputs pre-processed batches of data used to train different network architectures. The modified ResNet34 architecture implemented in this work is available in `model.py` with the **Mod-ResNet34** function in the directory `scripts/`. Further, the training configuration and the training script is available in `train.py` in the directory `scripts/`. The loss function, optimizer, metrics, and hyperparameters can be modified here. The evaluation process and the necessary code are provided in `evaluation.ipynb` in `notebooks/`. Two trained models with weights are provided in `saved-model/`, each trained with SIFT and SURF with Mod-ResNet34 architecture, respectively.
+## Usage
+Change file paths as needed for your setup.
 
 
-Change the path of the files accordingly.
+### Example Command for Training
 
-
-Example call to the training script from the terminal: 
-```python -m scripts.train from PATH```
-
+```bash
+python -m scripts.train from PATH
+```
+Replace PATH with the appropriate directory path for your files.
 
 
 
